@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        :root {
+            --bg-color-light: #ffffff;
+            --bg-color-dark: #000000;
+            --text-color-light: #000000;
+            --text-color-dark: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: var(--bg-color-light);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #calculator {
+            border-collapse: collapse;
+            width: 300px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #calculator td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #calculator td:hover {
+            background-color: #f9f9f9;
+        }
+
+        #result {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: right;
+            outline: none;
+        }
+
+        #theme-toggle {
+            margin-left: 20px;
+
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #theme-toggle:hover {
+            background-color: #0b7dda;
+        }
+
+        .dark-theme #calculator {
+            border: 2px solid #ffffff;
+            /* Цвет рамки и ее толщина */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <input id="result" type="text" readonly>
+        <table id="calculator">
+            <tr>
+                <td id="plus" data-key="+">+</td>
+                <td id="minus" data-key="-">-</td>
+                <td id="multiply" data-key="*">*</td>
+                <td id="divide" data-key="/">/</td>
+            </tr>
+            <tr>
+                <td data-key="7">7</td>
+                <td data-key="8">8</td>
+                <td data-key="9">9</td>
+                <td rowspan="4" id="equal" style="background-color: #f1c40f; color: #fff;" data-key="=">=</td>
+            </tr>
+            <tr>
+                <td data-key="4">4</td>
+                <td data-key="5">5</td>
+                <td data-key="6">6</td>
+            </tr>
+            <tr>
+                <td data-key="1">1</td>
+                <td data-key="2">2</td>
+                <td data-key="3">3</td>
+            </tr>
+            <tr>
+                <td data-key="0">0</td>
+                <td data-key=".">.</td>
+                <td data-key="C">C</td>
+            </tr>
+        </table>
+    </div>
+
+    <button id="theme-toggle">Toggle Theme</button>
+    <script src="js.js"></script>
+
+</body>
+
+</html>
